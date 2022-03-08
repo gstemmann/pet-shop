@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<div class="container">
+    <h1 class="display-1">Pet Adoption Availability</h1>
+    <table class="table table-striped ">
+      <thead class="thead-dark">
+        <th>Pet name</th>
+        <th>Species</th>
+        <th>Avalable Y/N?</th>
+      </thead>
+      <tbody>
+        {% for pets in pets %}
+        <tr>
+          <td>{{pets.name}} <a class="btn btn-sm btn-info" href="/{{pets.id}}/edit">Edit</a></td>
+          <td>{{pets.species}}</td>
+          <td>{{pets.available}}</td>
+      
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/add" class="btn btn-success">Add Pet</a>
+  </div>
+
+  {% endblock %}
